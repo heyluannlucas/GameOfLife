@@ -105,7 +105,7 @@ public class GameOfLifeGUI extends JFrame implements ActionListener {
 
 
     private void runSimulation() {
-        int count = 0; // initialize count to 0
+        int count = 0;
         int prevCount = 0;
         while (started) {
             boolean[][] newGrid = new boolean[ROWS][COLS];
@@ -122,7 +122,7 @@ public class GameOfLifeGUI extends JFrame implements ActionListener {
                         }
                     }
                     if (grid[i][j] != newGrid[i][j]) {
-                        count++; // increment count for each updated cell
+                        count++;
                     }
                 }
             }
@@ -165,8 +165,5 @@ public class GameOfLifeGUI extends JFrame implements ActionListener {
         startButton.setText("Start");
         countLabel.setText("<html>Cells updates: <br>0</html>");
     }
-
-    public static void main(String[] args) {
-        new GameOfLifeGUI();
-    }
 }
+
