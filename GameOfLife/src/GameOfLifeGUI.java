@@ -21,8 +21,15 @@ public class GameOfLifeGUI extends JFrame implements ActionListener {
         setResizable(false);
         add(countLabel, BorderLayout.EAST);
 
-        JOptionPane.showMessageDialog(null, "Welcome to Game Of Life\n\nThe Game of Life is a two-dimensional automaton where each cell in the grid can be either \"alive\" or \"dead\". The behavior of the automaton is determined by simple rules:\n\n1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.\n2. Any live cell with two or three live neighbors lives on to the next generation.\n3. Any live cell with more than three live neighbors dies, as if by overpopulation.\n4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.", "Game of Life Rules", JOptionPane.INFORMATION_MESSAGE);
-
+        JOptionPane.showMessageDialog(null, 
+        "Welcome to Game Of Life\n\n" +
+        "The Game of Life is a two-dimensional automaton where each cell in the grid can be either \"alive\" or \"dead\". The behavior of the automaton is determined by simple rules:\n\n" +
+        "1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.\n" +
+        "2. Any live cell with two or three live neighbors lives on to the next generation.\n" +
+        "3. Any live cell with more than three live neighbors dies, as if by overpopulation.\n" +
+        "4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.", 
+        "Game of Life Rules", JOptionPane.INFORMATION_MESSAGE);
+    
         restartButton = new JButton("Restart");
         restartButton.addActionListener(new ActionListener() {
             @Override
