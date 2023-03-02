@@ -6,30 +6,34 @@ import java.awt.event.MouseEvent;
 import javax.swing.*;
 
 public class GameOfLifeGUI extends JFrame implements ActionListener {
-    private final int ROWS = 30;
-    private final int COLS = 30;
+    private int ROWS;
+    private int COLS;
     private final int CELL_SIZE = 10;
-    private boolean[][] grid = new boolean[ROWS][COLS];
+    private boolean[][] grid;
     private boolean started = false;
-    private JButton startButton;
+    private JButton startButton, restartButton;
     private JPanel gridPanel;
-    private JButton restartButton;
-    private JLabel countLabel = new JLabel("<html>Cells updates:<br>0</html>");
-    public GameOfLifeGUI() {
+    JLabel countLabel = new JLabel("<html>Cells updates:<br>0</html>");
+
+    public GameOfLifeGUI(int rows, int cols) {
+        this.ROWS = rows;
+        this.COLS = cols;
+        this.grid = new boolean[ROWS][COLS];
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Game of Life");
-        setResizable(false);
+        setResizable(true);
         add(countLabel, BorderLayout.EAST);
 
-        JOptionPane.showMessageDialog(null, 
-        "Welcome to Game Of Life\n\n" +
-        "The Game of Life is a two-dimensional automaton where each cell in the grid can be either \"alive\" or \"dead\". The behavior of the automaton is determined by simple rules:\n\n" +
-        "1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.\n" +
-        "2. Any live cell with two or three live neighbors lives on to the next generation.\n" +
-        "3. Any live cell with more than three live neighbors dies, as if by overpopulation.\n" +
-        "4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.", 
-        "Game of Life Rules", JOptionPane.INFORMATION_MESSAGE);
-    
+        JOptionPane.showMessageDialog(null,
+                "Welcome to Game Of Life\n\n" +
+                        "The Game of Life is a two-dimensional automaton where each cell in the grid can be either \"alive\" or \"dead\". The behavior of the automaton is determined by simple rules:\n\n" +
+                        "1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.\n" +
+                        "2. Any live cell with two or three live neighbors lives on to the next generation.\n" +
+                        "3. Any live cell with more than three live neighbors dies, as if by overpopulation.\n" +
+                        "4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.",
+                "Game of Life Rules", JOptionPane.INFORMATION_MESSAGE);
+
         restartButton = new JButton("Restart");
         restartButton.addActionListener(new ActionListener() {
             @Override
@@ -173,4 +177,5 @@ public class GameOfLifeGUI extends JFrame implements ActionListener {
         countLabel.setText("<html>Cells updates: <br>0</html>");
     }
 }
+
 
