@@ -7,7 +7,7 @@ The program is written in Java and uses the Swing library for the GUI.
 #
 ## Usage ✍🏻 
 <br>
-To use this program, simply run the GameOfLifeGUI class. The program will display a window with a grid of gray cells. Click on any cell to toggle its status between "alive" and "dead". Press the "Start" button to start the simulation and see how the cells evolve based on the four rules of the game. Press the "Stop" button to stop the simulation.
+To use this program, simply run the Start class. The program will display a window with a grid of gray cells. Click on any cell to toggle its status between "alive" and "dead". Press the "Start" button to start the simulation and see how the cells evolve based on the four rules of the game. Press the "Stop" button to stop the simulation.
 The "Restart" button resets the grid to its initial state with all cells set to "dead".
 
 #
